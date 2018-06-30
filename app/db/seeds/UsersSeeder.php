@@ -21,6 +21,18 @@ class UsersSeeder extends AbstractSeed
                 'full_name' => 'admin',
                 'password' => password_hash('admin',PASSWORD_DEFAULT),
                 'isAdmin' => true,
+            ],
+            [
+                'login' => 'admin1',
+                'full_name' => 'admin1',
+                'password' => password_hash('admin1',PASSWORD_DEFAULT),
+                'isAdmin' => true,
+            ],
+            [
+                'login' => 'guest',
+                'full_name' => 'guest',
+                'password' => password_hash('guest',PASSWORD_DEFAULT),
+                'isAdmin' => false,
             ]
         ];
 
