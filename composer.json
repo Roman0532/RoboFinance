@@ -1,0 +1,13 @@
+{
+    "name": "roman/robo-finance",
+    "authors": [
+        {
+            "name": "Roman Maximov",
+            "email": "roman62477@yandex.ru"
+        }
+    ],
+    "require": {
+        "robmorgan/phinx": "^0.10.3",
+        "jasongrimes/paginator": "~1.0"
+    }
+}
