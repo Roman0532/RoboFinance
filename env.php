@@ -1,7 +1,7 @@
 <?php
-return ['host' => 'localhost',
-    'db_name' => 'robo_blog',
-    'username' => 'root',
+return ['host' => '',
+    'db_name' => '',
+    'username' => '',
     'password' => '',
-    'charset' => 'utf8',
+    'charset' => '',
 ];
