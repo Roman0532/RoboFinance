@@ -11,3 +11,11 @@
   <li>Выполнить команду php vendor/robmorgan/phinx/bin/phinx seed:run -s UsersSeeder</li>
   <li>Выполнить команду php vendor/robmorgan/phinx/bin/phinx seed:run -s ArticlesSeeder</li>
   </ul>
+  
+ ### Тестовые пользователи:
+ 
+ 1. Логин admin Пароль admin
+ 
+ 2. Логин admin1 Пароль admin1
+ 
+ 3. Логин guest Пароль guest
