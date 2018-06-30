@@ -1,10 +1,9 @@
 <?php
-$env = require_once 'env.php';
 session_start();
 
 if (isset($_SESSION['user'])) {
     unset($_SESSION['user']);
-    header('Location:' . $env['url']);
+    header('Location: /');
 } else {
-    header('Location:' . $env['url']);
+    header('Location: /');
 }

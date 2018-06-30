@@ -14,7 +14,6 @@ require_once 'app/db/DbConnection.php';
 require_once 'app/Services/UserService.php';
 require_once 'app/Services/ImageService.php';
 require_once 'app/Render/Renderer.php';
-$env = require_once 'env.php';
 
 session_start();
 
@@ -40,14 +39,14 @@ if ($_POST['update-article']) {
 
     if ($articlesRepository->updateArticle($_GET['id'], $filename, $_POST['title'], $_POST['content'])) {
         $_SESSION['success'] = 'Запись была успешно обновлена';
-        header('Location:' . $env['url']);
+        header('Location: /');
     } else {
         $errors = ['Запись не была обновлена'];
     }
 }
 
 if (!$userService->authorization() || $_SESSION['user']['id'] != $article['user_id']) {
-    header('Location:' . $env['url']);
+    header('Location: /');
 }
 
 return \App\Renderer\render('edit', ['errors' => $errors, 'article' => $article]);
