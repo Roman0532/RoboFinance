@@ -13,7 +13,7 @@
         });</script>
 </head>
 <body>
-<div class="wrapper">
+<div id="wrapper">
     <?php if (!empty($errors)): ?>
         <div class="error"> <?= array_shift($errors); ?> </div>
     <?php endif; ?>
@@ -35,9 +35,9 @@
             <input type="file" name="file"> <br> <br>
             <input type="hidden" name="_method" value="put"/>
             <input type="text" class="title" name="title" minlength="5" maxlength="100" required placeholder="Введите заголовок"
-                   value="<?= $article['title'] ?>"> <br><br>
+                   value="<?php echo $article['title'] ?>"> <br><br>
             <textarea id="txtEditor" class="textarea" name="content" required minlength="5" cols="50"
-                      rows="20"><?= $article['content'] ?></textarea>
+                      rows="20"><?php echo $article['content'] ?></textarea>
             <input type="submit" name="update-article" value="Обновить">
         </form>
     </div>

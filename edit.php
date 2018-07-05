@@ -24,7 +24,11 @@ $imageService = new ImageService();
 
 $article = $articlesRepository->getOneArticleById($_GET['id']);
 
-if ($_POST['update-article']) {
+if (!$userService->authorization() || $_SESSION['user']['id'] != $article['user_id']) {
+    header('Location: /');
+}
+
+if (isset($_POST['update-article'])) {
     $errors = null;
     if (!empty($_FILES['file']['name'])) {
         if (!$filename = $imageService->uploadImageOnServer($_FILES['file']['name'])) {
@@ -37,16 +41,17 @@ if ($_POST['update-article']) {
         }
     }
 
-    if ($articlesRepository->updateArticle($_GET['id'], $filename, $_POST['title'], $_POST['content'])) {
+    if ($articlesRepository->updateArticle(
+        $_GET['id'],
+        $filename,
+        $_POST['title'],
+        $_POST['content'])
+    ) {
         $_SESSION['success'] = 'Запись была успешно обновлена';
         header('Location: /');
     } else {
         $errors = ['Запись не была обновлена'];
     }
-}
-
-if (!$userService->authorization() || $_SESSION['user']['id'] != $article['user_id']) {
-    header('Location: /');
 }
 
 return \App\Renderer\render('edit', ['errors' => $errors, 'article' => $article]);

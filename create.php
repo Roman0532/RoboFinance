@@ -25,8 +25,7 @@ if (!$userService->authorization()) {
 }
 
 $errors = null;
-if ($_POST['create-article']) {
-
+if (isset($_POST['create-article'])) {
     if (!empty($_FILES['file']['name'])) {
         if (!$filename = $imageService->uploadImageOnServer($_FILES['file']['name'])) {
             echo 'Данный Файл не поддерживается';
@@ -34,7 +33,12 @@ if ($_POST['create-article']) {
         }
     }
 
-    if ($articlesRepository->createArticle($filename, $_SESSION['user']['id'], $_POST['title'], $_POST['content'])) {
+    if ($articlesRepository->createArticle(
+        $filename,
+        $_SESSION['user']['id'],
+        $_POST['title'],
+        $_POST['content'])
+    ) {
         $_SESSION['success'] = 'Запись была успешно добавлена';
         header('Location: /');
     } else {

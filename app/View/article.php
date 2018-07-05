@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../../public/css/style.css">
 </head>
 <body>
-<div class="wrapper">
+<div id="wrapper">
     <div class="article">
         <header>
             <?php if ($_SESSION['user']) : ?>
@@ -19,12 +19,12 @@
             <?php endif; ?>
         </header>
 
-        <h1><?= $article['title']; ?></h1>
+        <h1><?php echo $article['title']; ?></h1>
         <hr>
         <?php if (isset($article['image'])) : ?>
-            <div class="one-article"><img src="../../public/storage/<?= $article['image']; ?>" alt=""></div>
+            <div class="one-article"><img src="../../public/storage/<?php echo $article['image']; ?>" alt=""></div>
         <?php endif; ?>
-        <div class="one-article-content"><p><?= $article['content']; ?></p></div>
+        <div class="one-article-content"><p><?php echo $article['content']; ?></p></div>
     </div>
 </div>
 </body>

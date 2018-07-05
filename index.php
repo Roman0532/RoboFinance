@@ -29,4 +29,8 @@ $count = $articlesRepository->getCountArticles();
 
 $paginator = new Paginator($count['count'], $limit, $currentPage, '?page=(:num)');
 
-return \App\Renderer\render('index', ['popularArticles' => $popularArticles, 'articles' => $articles, 'paginator' => $paginator]);
+return \App\Renderer\render('index', [
+    'popularArticles' => $popularArticles,
+    'articles' => $articles,
+    'paginator' => $paginator
+]);

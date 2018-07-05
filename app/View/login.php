@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="../../public/css/style.css">
 </head>
 <body>
-<div class="wrapper">
+<div id="wrapper">
     <header>
-            <a href="/index.php">На главную</a>
+        <a href="/index.php">На главную</a>
     </header>
 
     <?php if (!empty($errors)): ?>
-        <div class="error"> <?= array_shift($errors); ?> </div>
+        <div class="error"> <?php echo array_shift($errors); ?> </div>
     <?php endif ?>
 
     <div class="container">
