@@ -1,5 +1,11 @@
 # RoboFinance
 
+# Что бы использовать проект на рабочей машние должно быть установлено следующее ПО
+
+PHP 7
+Composer
+MySQL
+
 # Для запуска проекта необходимо:
 <ul>
   <li>Склонировать проект на локальную машину используя команду git clone https://github.com/Roman0532/RoboFinance.git</li>
@@ -10,6 +16,7 @@
   <li>Выполнить команду php vendor/robmorgan/phinx/bin/phinx migrate</li>
   <li>Выполнить команду php vendor/robmorgan/phinx/bin/phinx seed:run -s UsersSeeder</li>
   <li>Выполнить команду php vendor/robmorgan/phinx/bin/phinx seed:run -s ArticlesSeeder</li>
+  <li>Выполнить php -S localhost:8080 в папке /public после чего проект будет доступен по даному адресу</li>
   </ul>
   
  ### Тестовые пользователи:
