@@ -20,7 +20,7 @@ class ImageService
         }
 
         $filename = md5($file . time()) . '.' . $format;
-        $uploadDir = 'public/storage/';
+        $uploadDir = 'storage/';
         $uploadFile = $uploadDir . $filename;
         if (move_uploaded_file($_FILES['file']['tmp_name'], $uploadFile)) {
             return $filename;
@@ -30,6 +30,6 @@ class ImageService
 
     public function deleteImageFromServer($file)
     {
-        unlink('public/storage/' . $file);
+        unlink('storage/' . $file);
     }
 }

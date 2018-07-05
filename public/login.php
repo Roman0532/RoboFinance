@@ -5,9 +5,9 @@ namespace Controller;
 use app\db\DbConnection;
 use app\Model\User;
 
-require_once 'app/Model/User.php';
-require_once 'app/db/DbConnection.php';
-require_once 'app/Render/Renderer.php';
+require_once '../app/Model/User.php';
+require_once '../app/db/DbConnection.php';
+require_once '../app/Render/Renderer.php';
 
 $db = new DbConnection();
 

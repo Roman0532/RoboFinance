@@ -6,10 +6,10 @@ use app\db\DbConnection;
 use app\Model\Article;
 use JasonGrimes\Paginator;
 
-require_once 'app/Model/Article.php';
-require_once 'app/db/DbConnection.php';
-require_once 'app/Render/Renderer.php';
-require 'vendor/autoload.php';
+require_once '../app/Model/Article.php';
+require_once '../app/db/DbConnection.php';
+require_once '../app/Render/Renderer.php';
+require '../vendor/autoload.php';
 
 session_start();
 

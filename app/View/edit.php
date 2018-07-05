@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8"/>
     <title>Редактирование</title>
-    <script src="../../public/js/jquery-1.3.2.js"></script>
-    <link rel="stylesheet" href="../../public/css/style.css">
-    <link rel="Stylesheet" type="text/css" href="../../public/css/jHtmlArea.css"/>
-    <script type="text/javascript" src="../../public/js/jHtmlArea-0.8.js"></script>
+    <script src="js/jquery-1.3.2.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="Stylesheet" type="text/css" href="css/jHtmlArea.css"/>
+    <script type="text/javascript" src="js/jHtmlArea-0.8.js"></script>
 
     <script>$(function () {
             $("textarea").htmlarea();
@@ -15,7 +15,7 @@
 <body>
 <div id="wrapper">
     <?php if (!empty($errors)): ?>
-        <div class="error"> <?= array_shift($errors); ?> </div>
+        <div class="error"> <?php echo array_shift($errors); ?> </div>
     <?php endif; ?>
 
     <header>

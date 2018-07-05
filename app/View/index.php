@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>Главная странницы</title>
-    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -38,7 +38,7 @@
 
                 <?php if ($article['image']) : ?>
                     <div class="article-image">
-                        <img src="../../public/storage/<?php echo $article['image']; ?>" alt="">
+                        <img src="storage/<?php echo $article['image']; ?>" alt="">
                     </div>
                 <?php endif; ?>
 

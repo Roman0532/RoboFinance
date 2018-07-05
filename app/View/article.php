@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>Статья</title>
-    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div id="wrapper">
@@ -22,7 +22,7 @@
         <h1><?php echo $article['title']; ?></h1>
         <hr>
         <?php if (isset($article['image'])) : ?>
-            <div class="one-article"><img src="../../public/storage/<?php echo $article['image']; ?>" alt=""></div>
+            <div class="one-article"><img src="storage/<?php echo $article['image']; ?>" alt=""></div>
         <?php endif; ?>
         <div class="one-article-content"><p><?php echo $article['content']; ?></p></div>
     </div>

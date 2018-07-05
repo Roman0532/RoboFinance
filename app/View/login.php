@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>Авторизация</title>
-    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div id="wrapper">

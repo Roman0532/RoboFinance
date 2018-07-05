@@ -7,11 +7,11 @@ use app\Model\Article;
 use app\Services\ImageService;
 use app\Services\UserService;
 
-require_once 'app/db/DbConnection.php';
-require_once 'app/Services/ImageService.php';
-require_once 'app/Services/UserService.php';
-require_once 'app/Model/Article.php';
-require_once 'app/Render/Renderer.php';
+require_once '../app/db/DbConnection.php';
+require_once '../app/Services/ImageService.php';
+require_once '../app/Services/UserService.php';
+require_once '../app/Model/Article.php';
+require_once '../app/Render/Renderer.php';
 
 session_start();
 

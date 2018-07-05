@@ -12,6 +12,6 @@ require_once 'Template.php';
  */
 function render($path, $variables = [])
 {
-    $path = realpath('app/View/' . $path . '.php');
+    $path = realpath('../app/View/' . $path . '.php');
     return \App\Template\render($path, $variables);
 }
