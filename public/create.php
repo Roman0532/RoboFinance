@@ -20,25 +20,31 @@ $userService = new UserService();
 $imageService = new ImageService();
 $articlesRepository = new Article($db->connection());
 
-if (!$userService->authorization()) {
+$isAuthorize = $userService->authorization();
+
+if (!$isAuthorize) {
     header('Location: /');
 }
 
 $errors = null;
 if (isset($_POST['create-article'])) {
     if (!empty($_FILES['file']['name'])) {
-        if (!$filename = $imageService->uploadImageOnServer($_FILES['file']['name'])) {
+        
+        $filename = $imageService->uploadImageOnServer($_FILES['file']['name']);
+        if (!$filename) {
             echo 'Данный Файл не поддерживается';
             exit();
         }
     }
 
-    if ($articlesRepository->createArticle(
+    $isCreated = $articlesRepository->createArticle(
         $filename,
         $_SESSION['user']['id'],
         $_POST['title'],
-        $_POST['content'])
-    ) {
+        $_POST['content']
+    );
+
+    if ($isCreated) {
         $_SESSION['success'] = 'Запись была успешно добавлена';
         header('Location: /');
     } else {

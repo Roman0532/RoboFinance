@@ -15,7 +15,9 @@ session_start();
 
 $articlesRepository = new Article($db->connection());
 
-if (!$article = $articlesRepository->getOneArticleById($_GET['id'])) {
+$article = $articlesRepository->getOneArticleById($_GET['id']);
+
+if (!$article) {
     header('Location: /');
 }
 

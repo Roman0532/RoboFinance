@@ -20,7 +20,8 @@ $errors = null;
 $userRepository = new User($db->connection());
 
 if (isset($_POST['submit'])) {
-    if ($user = $userRepository->authenticate($_POST['login'], $_POST['password'])) {
+    $user = $userRepository->authenticate($_POST['login'], $_POST['password']);
+    if ($user) {
         $_SESSION['user'] = $user;
         header('Location: /');
     } else {

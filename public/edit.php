@@ -24,14 +24,18 @@ $imageService = new ImageService();
 
 $article = $articlesRepository->getOneArticleById($_GET['id']);
 
-if (!$userService->authorization() || $_SESSION['user']['id'] != $article['user_id']) {
+$isAuthorize = $userService->authorization();
+
+if (!$isAuthorize || $_SESSION['user']['id'] != $article['user_id']) {
     header('Location: /');
 }
 
 if (isset($_POST['update-article'])) {
     $errors = null;
     if (!empty($_FILES['file']['name'])) {
-        if (!$filename = $imageService->uploadImageOnServer($_FILES['file']['name'])) {
+        $filename = $imageService->uploadImageOnServer($_FILES['file']['name']);
+
+        if (!$filename) {
             echo 'Данный Файл не поддерживается';
             exit();
         } else {
@@ -41,12 +45,13 @@ if (isset($_POST['update-article'])) {
         }
     }
 
-    if ($articlesRepository->updateArticle(
+    $isUpdated = $articlesRepository->updateArticle(
         $_GET['id'],
         $filename,
         $_POST['title'],
-        $_POST['content'])
-    ) {
+        $_POST['content']);
+
+    if ($isUpdated) {
         $_SESSION['success'] = 'Запись была успешно обновлена';
         header('Location: /');
     } else {
