@@ -6,7 +6,6 @@ use PDO;
 
 class Article
 {
-
     private $connection;
 
     /**
@@ -100,7 +99,7 @@ class Article
      * @param $content
      * @return bool
      */
-    public function updateArticle($id, $filename = null, $title, $content) : bool
+    public function updateArticle($id, $title, $content, $filename = null) : bool
     {
         if ($filename) {
             $update = $this->connection->prepare("
@@ -143,7 +142,7 @@ class Article
      * @param $content
      * @return bool
      */
-    public function createArticle($filename = null, $userId, $title, $content): bool
+    public function createArticle($userId, $title, $content, $filename = null): bool
     {
         $insert = $this->connection->prepare("
             INSERT INTO `articles` SET

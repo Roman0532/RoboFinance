@@ -6,16 +6,15 @@ use PDO;
 
 class User
 {
-
     private $connection;
 
     /**
      * User constructor.
+     * @param $connection
      */
     public function __construct($connection)
     {
         $this->connection = $connection;
-
     }
 
     /**

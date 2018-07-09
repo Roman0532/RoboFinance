@@ -29,7 +29,6 @@ if (!$isAuthorize) {
 $errors = null;
 if (isset($_POST['create-article'])) {
     if (!empty($_FILES['file']['name'])) {
-        
         $filename = $imageService->uploadImageOnServer($_FILES['file']['name']);
         if (!$filename) {
             echo 'Данный Файл не поддерживается';
@@ -38,10 +37,10 @@ if (isset($_POST['create-article'])) {
     }
 
     $isCreated = $articlesRepository->createArticle(
-        $filename,
         $_SESSION['user']['id'],
         $_POST['title'],
-        $_POST['content']
+        $_POST['content'],
+        $filename
     );
 
     if ($isCreated) {

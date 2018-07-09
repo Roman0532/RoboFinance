@@ -18,6 +18,5 @@ class DbConnection
         } catch (\PDOException $exception) {
             exit($exception->getMessage());
         }
-
     }
 }

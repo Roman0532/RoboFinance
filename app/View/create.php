@@ -13,7 +13,7 @@
 </head>
 <body>
 <div id="wrapper">
-    <?php if (!empty($errors)): ?>
+    <?php if (!empty($errors)) : ?>
         <div class="error"> <?php echo array_shift($errors); ?> </div>
     <?php endif; ?>
 

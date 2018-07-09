@@ -8,7 +8,7 @@
 </head>
 <body>
 <div id="wrapper">
-    <?php if (!empty($_SESSION['success'])): ?>
+    <?php if (!empty($_SESSION['success'])) : ?>
         <div class="success"> <?php echo $_SESSION['success'];
             unset($_SESSION['success']); ?> </div>
     <?php endif ?>
@@ -23,7 +23,7 @@
     </header>
 
     <div class="article-wrapper">
-        <?php foreach ($articles as $article): ?>
+        <?php foreach ($articles as $article) : ?>
             <div class="article">
                 <h1><a href="article.php?id=<?php echo $article['id'] ?>"><?php echo $article['title']; ?></a></h1>
                 <div class="admin-info">
@@ -50,8 +50,9 @@
     </div>
 
     <div class="popular-block">
-        <?php foreach ($popularArticles as $popularArticle): ?>
-            <a href="article.php?id=<?php echo $popularArticle['id'] ?>"> <?php echo $popularArticle['title'] ?></a> <br>
+        <?php foreach ($popularArticles as $popularArticle) : ?>
+            <a href="article.php?id=<?php echo $popularArticle['id'] ?>"> 
+                <?php echo $popularArticle['title'] ?></a> <br>
             <hr>
         <?php endforeach; ?>
     </div>

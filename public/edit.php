@@ -47,9 +47,10 @@ if (isset($_POST['update-article'])) {
 
     $isUpdated = $articlesRepository->updateArticle(
         $_GET['id'],
-        $filename,
         $_POST['title'],
-        $_POST['content']);
+        $_POST['content'],
+        $filename
+    );
 
     if ($isUpdated) {
         $_SESSION['success'] = 'Запись была успешно обновлена';

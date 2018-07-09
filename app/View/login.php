@@ -11,7 +11,7 @@
         <a href="/index.php">На главную</a>
     </header>
 
-    <?php if (!empty($errors)): ?>
+    <?php if (!empty($errors)) : ?>
         <div class="error"> <?php echo array_shift($errors); ?> </div>
     <?php endif ?>
 

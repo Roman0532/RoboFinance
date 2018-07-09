@@ -14,7 +14,7 @@
 </head>
 <body>
 <div id="wrapper">
-    <?php if (!empty($errors)): ?>
+    <?php if (!empty($errors)) : ?>
         <div class="error"> <?php echo array_shift($errors); ?> </div>
     <?php endif; ?>
 
@@ -34,7 +34,8 @@
             <input type="hidden" name="MAX_FILE_SIZE" value="20000000">
             <input type="file" name="file"> <br> <br>
             <input type="hidden" name="_method" value="put"/>
-            <input type="text" class="title" name="title" minlength="5" maxlength="100" required placeholder="Введите заголовок"
+            <input type="text" class="title" name="title" minlength="5" 
+                   maxlength="100" required placeholder="Введите заголовок"
                    value="<?php echo $article['title'] ?>"> <br><br>
             <textarea id="txtEditor" class="textarea" name="content" required minlength="5" cols="50"
                       rows="20"><?php echo $article['content'] ?></textarea>
